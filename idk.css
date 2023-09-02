@@ -1,0 +1,24 @@
+body {
+    background-color: black; /* Sayfa arka planını siyah yapar */
+    display: flex;
+    justify-content: center; /* Düğmeyi yatayda ortalar */
+    align-items: center; /* Düğmeyi dikeyde ortalar */
+    height: 100vh; /* Ekran yüksekliği kadar sayfa yüksekliği */
+    margin: 0; /* Sayfa kenar boşluğunu kaldırır */
+
+	#gifContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+
+        #gifContainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+}

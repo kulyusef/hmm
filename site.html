@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="idk.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?</title>
+</head>
+<body>
+
+
+ 
+    <!-- Müziği otomatik olarak çalacak ses nesnesi -->
+    <audio id="myAudio">
+        <source src="music.mp3" type="audio/mpeg">
+        Tarayıcınız ses etiketini desteklemiyorsa, müziği dinleyemezsiniz.
+    </audio>
+
+<!-- Tam ekranı kaplayacak GIF -->
+    <div id="gifContainer" style="display: none;">
+        <img src="gif.gif" alt="GIF">
+    </div>
+
+    <!-- Kullanıcıdan etkileşim bekleyen bir düğme -->
+    <button id="startButton" onclick="startMusic()">???</button>
+
+    <!-- JavaScript kodu ile müziği başlat ve düğmeyi sil -->
+    <script>
+function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Tam ekran hatası: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+        var audio = document.getElementById("myAudio");
+        var startButton = document.getElementById("startButton");
+	var gifContainer = document.getElementById("gifContainer");
+
+        function startMusic() {
+            audio.play(); // Müziği başlat
+            startButton.remove(); // Düğmeyi sil
+	toggleFullScreen(); // Tam ekranı aç
+	gifContainer.style.display = "block"; // GIF'i göster
+        }
+    </script>
+</body>
+</html>
